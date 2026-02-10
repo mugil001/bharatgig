@@ -1,0 +1,6 @@
+-- Update jobs table to be more flexible for MVP
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS category TEXT;
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS is_negotiable BOOLEAN DEFAULT FALSE;
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS skills TEXT[];
+ALTER TABLE jobs ALTER COLUMN budget_type DROP NOT NULL;
+ALTER TABLE jobs ALTER COLUMN description DROP NOT NULL;
